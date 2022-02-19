@@ -10,9 +10,8 @@ public class Questao2 {
 
 		Scanner ler = new Scanner(System.in);
 		String senha = "";
-		
-		System.out.print("Digite uma palavra: ");
 
+		System.out.print("Digite a senha: ");
 		senha = ler.next();
 		
 		if (senha.length() < 6) {
