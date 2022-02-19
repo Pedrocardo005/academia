@@ -5,48 +5,44 @@ import java.util.Scanner;
 public class Questao2 {
 	
 	public void desafio() {
-		boolean senhaForte = false;
+		int caracFaltantes = 0;
+		int outrosFaltantes = 0;
 
-		while (!senhaForte) {
-			Scanner ler = new Scanner(System.in);
-			String senha = "";
-			
-			System.out.print("Digite uma palavra: ");
-			try {
-				senha = ler.next();
-				if (senha.length() < 6) {
-					int valor = 6 - senha.length();
-					System.out.println("Digite mais "+valor+" caracteres");
-					break;
-				}
-				
-				// Verifica se achou algum número
-				if (!contemNumero(senha)) {
-					System.out.println("Digite ao menos um número");
-					break;
-				}
-				
-				if (!contemMinusculo(senha)) {
-					System.out.println("Digite ao menos uma letra minúscula");
-					break;
-				}
-				
-				if (!contemMaiusculo(senha)) {
-					System.out.println("Digite uma letra maiúscula");
-					break;
-				}
-				
-				if (!contemEspeciais(senha)) {
-					System.out.println("Digite ao menos um caractere especial");
-					break;
-				}
-				
-				senhaForte = true;
-//				ler.close();
-			} catch (Exception e) {
-				System.out.println("Houve algum erro");
-			}
-		}	
+		Scanner ler = new Scanner(System.in);
+		String senha = "";
+		
+		System.out.print("Digite uma palavra: ");
+
+		senha = ler.next();
+		
+		if (senha.length() < 6) {
+			caracFaltantes = 6 - senha.length();
+		}
+		
+		// Verifica se achou algum número
+		if (!contemNumero(senha)) {
+			outrosFaltantes++;
+		}
+		
+		if (!contemMinusculo(senha)) {
+			outrosFaltantes++;
+		}
+		
+		if (!contemMaiusculo(senha)) {
+			outrosFaltantes++;
+		}
+		
+		if (!contemEspeciais(senha)) {
+			outrosFaltantes++;
+		}
+		
+		if (caracFaltantes > outrosFaltantes) {
+			System.out.println(caracFaltantes);
+		} else if(caracFaltantes == 0 && outrosFaltantes == 0) {
+			System.out.println(0);
+		} else {
+			System.out.println(outrosFaltantes);
+		}
 	}
 	
 	private boolean contemNumero(String senha) {
