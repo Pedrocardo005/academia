@@ -3,6 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 
 import desafios.Questao1;
+import desafios.Questao2;
 import junit.framework.TestCase;
 
 class QuestoesTest extends TestCase{
@@ -15,5 +16,14 @@ class QuestoesTest extends TestCase{
 		
 		assertEquals(res1, questao1.desafio(4));
 		assertEquals(res2, questao1.desafio(6));
+	}
+	
+	
+	@Test
+	public void testQuestao2() {
+		String ent1 = "Ya3";
+		Questao2 questao2 = new Questao2();
+		
+		assertEquals(3, questao2.desafio(ent1));
 	}
 }

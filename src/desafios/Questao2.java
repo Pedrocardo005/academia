@@ -1,18 +1,10 @@
 package desafios;
 
-import java.util.Scanner;
-
 public class Questao2 {
 	
-	public void desafio() {
+	public int desafio(String senha) {
 		int caracFaltantes = 0;
 		int outrosFaltantes = 0;
-
-		Scanner ler = new Scanner(System.in);
-		String senha = "";
-
-		System.out.print("Digite a senha: ");
-		senha = ler.next();
 		
 		if (senha.length() < 6) {
 			caracFaltantes = 6 - senha.length();
@@ -36,11 +28,11 @@ public class Questao2 {
 		}
 		
 		if (caracFaltantes > outrosFaltantes) {
-			System.out.println(caracFaltantes);
+			return caracFaltantes;
 		} else if(caracFaltantes == 0 && outrosFaltantes == 0) {
-			System.out.println(0);
+			return 0;
 		} else {
-			System.out.println(outrosFaltantes);
+			return outrosFaltantes;
 		}
 	}
 	

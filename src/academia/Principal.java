@@ -32,7 +32,12 @@ public class Principal {
 				}
 				break;
 			case 2:
-				questao2.desafio();
+				Scanner ler = new Scanner(System.in);
+				String senha = "";
+		
+				System.out.print("Digite a senha: ");
+				senha = ler.next();
+				System.out.println(questao2.desafio(senha));
 				break;
 			case 3:
 				questao3.desafio();
