@@ -1,5 +1,6 @@
 package academia;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import desafios.Questao1;
@@ -30,7 +31,7 @@ public class Principal {
 				System.out.println("Opção inválida.");
 				break;
 			}
-		} catch (Exception e) {
+		} catch (InputMismatchException e) {
 			System.out.println("Opção inválida");
 		}
 	}
