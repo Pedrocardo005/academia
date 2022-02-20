@@ -20,7 +20,16 @@ public class Principal {
 			int op = scanner.nextInt();
 			switch (op) {
 			case 1:
-				questao1.desafio();
+				try {
+					int n = 0;
+					Scanner ler = new Scanner(System.in);
+			
+					System.out.print("Digite o número de vezes: ");
+					n = ler.nextInt();
+					System.out.println(questao1.desafio(n));
+				} catch (InputMismatchException e) {
+					System.out.println("Digito incorreto");
+				}
 				break;
 			case 2:
 				questao2.desafio();
