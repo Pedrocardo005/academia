@@ -27,6 +27,7 @@ public class Principal {
 					System.out.print("Digite o número de vezes: ");
 					n = ler.nextInt();
 					System.out.println(questao1.desafio(n));
+					ler.close();
 				} catch (InputMismatchException e) {
 					System.out.println("Digito incorreto");
 				}
@@ -40,7 +41,13 @@ public class Principal {
 				System.out.println(questao2.desafio(senha));
 				break;
 			case 3:
-				questao3.desafio();
+				String s = "";
+				Scanner input = new Scanner(System.in);
+				  
+		        System.out.print("Digite a palavra: ");
+		        s = input.next();
+				System.out.println(questao3.desafio(s));
+				break;
 			default:
 				System.out.println("Opção inválida.");
 				break;
@@ -48,6 +55,7 @@ public class Principal {
 		} catch (InputMismatchException e) {
 			System.out.println("Opção inválida");
 		}
+		scanner.close();
 	}
 
 }

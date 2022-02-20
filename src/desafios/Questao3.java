@@ -2,16 +2,11 @@ package desafios;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Questao3 {
-	public void desafio() {
-		String s = "";
-		Scanner ler = new Scanner(System.in);
+	public int desafio(String s) {
+
         HashMap<String, Integer> map= new HashMap<>();
-  
-        System.out.print("Digite a palavra: ");
-        s = ler.next();
         
         for(int i = 0; i < s.length(); i++){
             for(int j = i; j < s.length(); j++){
@@ -29,6 +24,6 @@ public class Questao3 {
             int n = map.get(key);
             anagramPairCount += (n * (n-1))/2;
         }
-        System.out.println(anagramPairCount);
+        return anagramPairCount;
 	}
 }
