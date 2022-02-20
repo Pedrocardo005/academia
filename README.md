@@ -13,7 +13,7 @@
 
  ### 1º Passo
  ```bash
- git pull https://github.com/Pedrocardo005/academia
+ git pull https://github.com/Pedrocardo005/academia.git
  ```
 
  ### 2º Passo
